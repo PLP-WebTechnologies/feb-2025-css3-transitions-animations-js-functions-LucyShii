@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Animations Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Animations</h1>
+        <p>Demonstrating CSS3 animations with JavaScript and localStorage</p>
+    </header>
+
+    <main>
+        <section class="animation-showcase">
+            <h2>Animation Showcase</h2>
+            <div class="animation-container">
+                <div class="animated-element" id="animated-box"></div>
+                <div class="controls">
+                    <button id="play-pulse">Pulse</button>
+                    <button id="play-rotate">Rotate</button>
+                    <button id="play-bounce">Bounce</button>
+                    <button id="play-shake">Shake</button>
+                    <button id="play-custom" class="primary-btn">Combo Animation</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="theme-customizer">
+            <h2>Theme Customizer</h2>
+            <div class="color-picker">
+                <div class="color-option">
+                    <label for="background-color">Background Color:</label>
+                    <input type="color" id="background-color" value="#ffffff">
+                </div>
+                <div class="color-option">
+                    <label for="element-color">Element Color:</label>
+                    <input type="color" id="element-color" value="#3498db">
+                </div>
+                <div class="color-option">
+                    <label for="text-color">Text Color:</label>
+                    <input type="color" id="text-color" value="#333333">
+                </div>
+                <button id="save-theme" class="primary-btn">Save Theme</button>
+                <button id="reset-theme">Reset Theme</button>
+            </div>
+        </section>
+
+        <section class="animation-creator">
+            <h2>Custom Animation Creator</h2>
+            <div class="creator-controls">
+                <div class="control-group">
+                    <label for="animation-duration">Duration (seconds):</label>
+                    <input type="range" id="animation-duration" min="0.5" max="5" step="0.1" value="1">
+                    <span id="duration-value">1s</span>
+                </div>
+                
+                <div class="control-group">
+                    <label for="animation-scale">Scale Effect:</label>
+                    <input type="range" id="animation-scale" min="0.5" max="2" step="0.1" value="1.2">
+                    <span id="scale-value">1.2x</span>
+                </div>
+                
+                <div class="control-group">
+                    <label for="animation-rotation">Rotation (degrees):</label>
+                    <input type="range" id="animation-rotation" min="0" max="360" step="15" value="0">
+                    <span id="rotation-value">0°</span>
+                </div>
+
+                <div class="control-group">
+                    <label>Timing Function:</label>
+                    <select id="timing-function">
+                        <option value="ease">Ease</option>
+                        <option value="linear">Linear</option>
+                        <option value="ease-in">Ease In</option>
+                        <option value="ease-out">Ease Out</option>
+                        <option value="ease-in-out">Ease In Out</option>
+                        <option value="cubic-bezier(0.68, -0.55, 0.27, 1.55)">Bounce Effect</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="animation-iterations">Iterations:</label>
+                    <select id="animation-iterations">
+                        <option value="1">1 time</option>
+                        <option value="2">2 times</option>
+                        <option value="3">3 times</option>
+                        <option value="infinite">Infinite</option>
+                    </select>
+                </div>
+                
+                <button id="apply-custom" class="primary-btn">Apply Animation</button>
+                <button id="save-animation">Save Animation</button>
+            </div>
+            
+            <div class="saved-animations">
+                <h3>Saved Animations</h3>
+                <div id="saved-list" class="saved-list">
+                    <p class="empty-state">No saved animations yet. Create and save some!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CSS3 Animations & JavaScript Demo | Your settings are saved in localStorage</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
